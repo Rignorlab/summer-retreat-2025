@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>དབྱར་དུས་སྒོམ་སྒྲུབ། First Summer Retreat 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+Tibetan:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold:         #C9A84C;
+    --gold-light:   #E8C97A;
+    --gold-dim:     #8B6E32;
+    --deep:         #0D0D0D;
+    --surface:      #111111;
+    --card:         #181818;
+    --border:       rgba(201,168,76,0.25);
+    --border-focus: rgba(201,168,76,0.8);
+    --text:         #E8E0D0;
+    --muted:        #7A7060;
+    --error:        #E07070;
+    --success:      #6DBF8A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* MANDALA BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(201,168,76,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 30% at 10% 60%,  rgba(201,168,76,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* GEOMETRIC PATTERN */
+  .bg-pattern {
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image:
+      repeating-linear-gradient( 45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* PAGE WRAPPER */
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 52px;
+    animation: fadeDown 0.9s ease both;
+  }
+
+  .lotus-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .lotus-divider::before,
+  .lotus-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.6;
+  }
+  .lotus-symbol {
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 8px;
+  }
+
+  .tibetan-title {
+    font-family: 'Noto Serif Tibetan', serif;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .english-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .year-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 5px 18px;
+    margin-top: 12px;
+  }
+
+  /* INFO CARDS */
+  .info-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+    animation: fadeUp 0.9s 0.2s ease both;
+  }
+
+  .info-card {
+    background: var(--card);
+    padding: 18px 22px;
+  }
+
+  .info-label {
+    font-family: 'Noto Serif Tibetan', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .info-label-en {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .info-value {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .contact-row { grid-column: 1 / -1; }
+  .contact-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .chip {
+    font-size: 12px;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.5px;
+  }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 44px 44px 52px;
+    animation: fadeUp 0.9s 0.35s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-card::before,
+  .form-card::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: var(--gold-dim);
+    border-style: solid;
+    opacity: 0.5;
+  }
+  .form-card::before { top: 12px;    left: 12px;  border-width: 1px 0 0 1px; }
+  .form-card::after  { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+
+  .form-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* FORM FIELDS */
+  .field-group { margin-bottom: 28px; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  label { display: block; margin-bottom: 8px; }
+
+  .label-tibetan {
+    font-family: 'Noto Serif Tibetan', serif;
+    font-size: 12px;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .label-english {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .required-star {
+    color: var(--gold);
+    margin-left: 3px;
+    font-style: normal;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    padding: 11px 16px;
+    outline: none;
+    transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  input[type="date"] { color-scheme: dark; }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--border-focus);
+    background: rgba(201,168,76,0.04);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.06);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(122,112,96,0.6);
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+  select option { background: #1a1a1a; color: var(--text); }
+
+  textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+
+  /* RADIO GROUP */
+  .radio-group {
+    display: flex;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .radio-option { flex: 1; }
+  .radio-option input[type="radio"] { display: none; }
+  .radio-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.02);
+    border-right: 1px solid var(--border);
+    transition: background 0.2s;
+    margin: 0;
+  }
+  .radio-option:last-child label { border-right: none; }
+  .radio-option input[type="radio"]:checked + label {
+    background: rgba(201,168,76,0.12);
+    border-bottom: 2px solid var(--gold);
+  }
+  .radio-option label:hover { background: rgba(201,168,76,0.06); }
+  .radio-tibetan {
+    font-family: 'Noto Serif Tibetan', serif;
+    font-size: 11px;
+    color: var(--gold-light);
+    margin-bottom: 2px;
+  }
+  .radio-english { font-size: 12px; color: var(--muted); font-style: italic; }
+
+  /* DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 36px 0;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .divider-gem {
+    width: 6px;
+    height: 6px;
+    background: var(--gold-dim);
+    transform: rotate(45deg);
+  }
+
+  /* EMAIL NOTE */
+  .email-note {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .email-note::before { content: '✦'; color: var(--gold-dim); font-size: 9px; }
+
+  /* FIELD ERROR */
+  .field-error {
+    font-size: 12px;
+    color: var(--error);
+    margin-top: 5px;
+    display: none;
+    font-style: italic;
+  }
+  .field-group.has-error input,
+  .field-group.has-error select,
+  .field-group.has-error textarea { border-color: var(--error); }
+  .field-group.has-error .field-error { display: block; }
+
+  /* SUBMIT BUTTON */
+  .submit-wrap { margin-top: 44px; text-align: center; }
+
+  .submit-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding: 16px 52px;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.15), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+  .submit-btn:hover::before { transform: translateX(0); }
+  .submit-btn:hover { box-shadow: 0 0 30px rgba(201,168,76,0.15); color: #fff; }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .submit-tibetan {
+    font-family: 'Noto Serif Tibetan', serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* SPINNER */
+  .spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(201,168,76,0.3);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  .submit-btn.loading .spinner { display: inline-block; }
+  .submit-btn.loading .submit-tibetan,
+  .submit-btn.loading .submit-label { opacity: 0.4; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* SUCCESS OVERLAY */
+  .success-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 24px;
+  }
+  .success-overlay.show { display: flex; animation: fadeIn 0.4s ease; }
+
+  .success-icon {
+    width: 72px;
+    height: 72px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto;
+    animation: scaleIn 0.5s 0.2s ease both;
+  }
+  .success-tibetan {
+    font-family: 'Noto Serif Tibetan', serif;
+    font-size: 18px;
+    color: var(--gold-light);
+    animation: fadeUp 0.5s 0.3s ease both;
+  }
+  .success-english {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--text);
+    animation: fadeUp 0.5s 0.4s ease both;
+  }
+  .success-msg {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 380px;
+    line-height: 1.7;
+    animation: fadeUp 0.5s 0.5s ease both;
+  }
+  .success-close {
+    margin-top: 10px;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 10px 28px;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: fadeUp 0.5s 0.6s ease both;
+  }
+  .success-close:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  /* ERROR TOAST */
+  .toast {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a1010;
+    border: 1px solid var(--error);
+    color: var(--error);
+    font-size: 13px;
+    padding: 12px 24px;
+    z-index: 200;
+    animation: fadeUp 0.3s ease;
+    white-space: nowrap;
+  }
+  .toast.show { display: block; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    animation: fadeUp 0.9s 0.5s ease both;
+  }
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    line-height: 2;
+  }
+  .footer-text a { color: var(--gold-dim); text-decoration: none; transition: color 0.2s; }
+  .footer-text a:hover { color: var(--gold-light); }
+
+  /* ANIMATIONS */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 580px) {
+    .form-card  { padding: 28px 20px 36px; }
+    .field-row  { grid-template-columns: 1fr; }
+    .info-strip { grid-template-columns: 1fr; }
+    .contact-row { grid-column: 1; }
+    .radio-tibetan { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-icon">✦</div>
+  <p class="success-tibetan">སྒོ་བཀར་གྲུབ་སོང་།</p>
+  <p class="success-english">Registration Complete</p>
+  <p class="success-msg">Your registration has been submitted successfully. We look forward to welcoming you to the First Summer Retreat 2025.</p>
+  <button class="success-close" onclick="closeSuccess()">CLOSE</button>
+</div>
+
+<!-- ERROR TOAST -->
+<div class="toast" id="errorToast">Submission failed. Please try again.</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="lotus-divider">
+      <span class="lotus-symbol">❋ ༄ ❋</span>
+    </div>
+    <p class="tibetan-title">དབྱར་དུས་སྒོམ་སྒྲུབ་ཐེངས་དང་པོ།</p>
+    <h1 class="english-title">First Summer Retreat</h1>
+    <div class="year-badge">2025</div>
+  </header>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-card">
+      <span class="info-label">ཚོགས་དུས།</span>
+      <span class="info-label-en">Schedule</span>
+      <p class="info-value">31st July – 6th August<br>2025</p>
+    </div>
+    <div class="info-card">
+      <span class="info-label">ཚོགས་ཡུལ།</span>
+      <span class="info-label-en">Venue</span>
+      <p class="info-value">Gaden Shartse Guest House<br>Lama Camp - 1, Mundgod — 581411</p>
+    </div>
+    <div class="info-card contact-row">
+      <span class="info-label">ང་ཚོར་འབྲེལ་གཏུག་བྱེད་ས།</span>
+      <span class="info-label-en">Contact Us</span>
+      <div class="contact-chips">
+        <span class="chip">+91 9591347216</span>
+        <span class="chip">+91 7019642705</span>
+        <span class="chip">+91 8217428290</span>
+        <span class="chip">tenzingyatsoscienceleadershipa@gmail.com</span>
+        <span class="chip">wegame2019@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card">
+    <p class="form-section-title">Registration Form &nbsp;·&nbsp; སྒོ་བཀར་ཤོག་ངོས།</p>
+
+    <form id="retreatForm" novalidate>
+
+      <!-- Email -->
+      <div class="field-group" id="fg-email">
+        <label>
+          <span class="label-tibetan">ཡིག་འཕྲིན།</span>
+          <span class="label-english">Email Address <em class="required-star">*</em></span>
+        </label>
+        <input type="email" id="email" name="email"
+               placeholder="your@email.com" autocomplete="email">
+        <p class="email-note">Your email will be recorded with your response</p>
+        <p class="field-error">Please enter a valid email address.</p>
+      </div>
+
+      <div class="section-divider"><div class="divider-gem"></div></div>
+
+      <!-- Name + Sex -->
+      <div class="field-row">
+        <div class="field-group" id="fg-name">
+          <label>
+            <span class="label-tibetan">མིང་།</span>
+            <span class="label-english">Full Name <em class="required-star">*</em></span>
+          </label>
+          <input type="text" id="name" name="name"
+                 placeholder="Your full name" autocomplete="name">
+          <p class="field-error">Name is required.</p>
+        </div>
+
+        <div class="field-group" id="fg-sex">
+          <label>
+            <span class="label-tibetan">ཕོ་མོ།</span>
+            <span class="label-english">Sex <em class="required-star">*</em></span>
+          </label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="sex" id="sex-male" value="Male">
+              <label for="sex-male">
+                <span class="radio-tibetan">ཕོ།</span>
+                <span class="radio-english">Male</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="sex" id="sex-female" value="Female">
+              <label for="sex-female">
+                <span class="radio-tibetan">མོ།</span>
+                <span class="radio-english">Female</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="sex" id="sex-other" value="Other">
+              <label for="sex-other">
+                <span class="radio-tibetan">གཞན།</span>
+                <span class="radio-english">Other</span>
+              </label>
+            </div>
+          </div>
+          <p class="field-error" id="sex-error">Please select an option.</p>
+        </div>
+      </div>
+
+      <!-- DOB + Phone -->
+      <div class="field-row">
+        <div class="field-group" id="fg-dob">
+          <label>
+            <span class="label-tibetan">སྐྱེས་ཚེས།</span>
+            <span class="label-english">Date of Birth <em class="required-star">*</em></span>
+          </label>
+          <input type="date" id="dob" name="dob">
+          <p class="field-error">Date of birth is required.</p>
+        </div>
+
+        <div class="field-group" id="fg-phone">
+          <label>
+            <span class="label-tibetan">འབྲེལ་གཏུག་ཁ་པར་ཨང་།</span>
+            <span class="label-english">Contact Number <em class="required-star">*</em></span>
+          </label>
+          <input type="tel" id="phone" name="phone"
+                 placeholder="+91 00000 00000" autocomplete="tel">
+          <p class="field-error">Contact number is required.</p>
+        </div>
+      </div>
+
+      <!-- Occupation + Education -->
+      <div class="field-row">
+        <div class="field-group" id="fg-occupation">
+          <label>
+            <span class="label-tibetan">འཚོ་ཐབས།</span>
+            <span class="label-english">Occupation <em class="required-star">*</em></span>
+          </label>
+          <select id="occupation" name="occupation">
+            <option value="" disabled selected>— Select —</option>
+            <option>Student / སློབ་མ།</option>
+            <option>Monk / དགེ་འདུན་པ།</option>
+            <option>Nun / དགེ་འདུན་མ།</option>
+            <option>Teacher / དགེ་རྒན།</option>
+            <option>Researcher / ཞིབ་འཇུག་པ།</option>
+            <option>Business / ཚོང་ལས།</option>
+            <option>Government / གཞུང་ལས།</option>
+            <option>NGO / ཁེ་མེད་ཚོགས་པ།</option>
+            <option>Healthcare / གསོ་རིག</option>
+            <option>Other / གཞན།</option>
+          </select>
+          <p class="field-error">Please select your occupation.</p>
+        </div>
+
+        <div class="field-group" id="fg-education">
+          <label>
+            <span class="label-tibetan">ཤེས་ཡོན།</span>
+            <span class="label-english">Education <em class="required-star">*</em></span>
+          </label>
+          <select id="education" name="education">
+            <option value="" disabled selected>— Select —</option>
+            <option>Primary / གཞི་རིམ།</option>
+            <option>Secondary / བར་རིམ།</option>
+            <option>Higher Secondary / སྟོད་རིམ།</option>
+            <option>Bachelor's / སྐྱར་ཤེས།</option>
+            <option>Master's / ཀ་ཆེ་རིམ།</option>
+            <option>Doctorate / དོག་རེཊ།</option>
+            <option>Monastic Education / དགོན་ཤེས།</option>
+            <option>Other / གཞན།</option>
+          </select>
+          <p class="field-error">Please select your education level.</p>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="field-group" id="fg-address">
+        <label>
+          <span class="label-tibetan">སྡོད་གནས་དང་ཁ་བྱང་།</span>
+          <span class="label-english">Resident and Address <em class="required-star">*</em></span>
+        </label>
+        <textarea id="address" name="address"
+                  placeholder="Your current residence and full postal address…"></textarea>
+        <p class="field-error">Address is required.</p>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-wrap">
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="submit-tibetan">སྒོ་བཀར་བྱེད།</span>
+          <span class="submit-label">Register</span>
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-text">
+      ✦ &nbsp; གལ་ཆེའི་གནས་ཚུལ་ * ཡིས་མཚན་འཇོག་བྱས་པ་ཡིན། &nbsp; ✦<br>
+      <em>Fields marked * are required</em><br><br>
+      <a href="mailto:tenzingyatsoscienceleadershipa@gmail.com">
+        tenzingyatsoscienceleadershipa@gmail.com
+      </a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // ── CONFIG ──────────────────────────────────────────────────────────────────
+  // Replace this with your deployed Google Apps Script Web App URL
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxQG7K8FEQxKOE-uNCf4iR9dqqCDf-jhfl2oMd9POSK3J-YPFC2v4MgBPMWGedhqNqUpw/exec';
+
+  // ── ELEMENTS ────────────────────────────────────────────────────────────────
+  const form      = document.getElementById('retreatForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // ── HELPERS ─────────────────────────────────────────────────────────────────
+  function getVal(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function setError(groupId, show) {
+    const g = document.getElementById(groupId);
+    if (g) g.classList.toggle('has-error', show);
+  }
+
+  function validateEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  function showToast(msg, duration = 4000) {
+    const t = document.getElementById('errorToast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), duration);
+  }
+
+  // ── VALIDATION ──────────────────────────────────────────────────────────────
+  function validate() {
+    let ok = true;
+
+    const email = getVal('email');
+    const emailOk = validateEmail(email);
+    setError('fg-email', !emailOk);
+    if (!emailOk) ok = false;
+
+    const name = getVal('name');
+    setError('fg-name', !name);
+    if (!name) ok = false;
+
+    const sex    = document.querySelector('input[name="sex"]:checked');
+    const sexErr = document.getElementById('sex-error');
+    const sexGrp = document.getElementById('fg-sex');
+    if (!sex) {
+      sexGrp && sexGrp.classList.add('has-error');
+      sexErr && (sexErr.style.display = 'block');
+      ok = false;
+    } else {
+      sexGrp && sexGrp.classList.remove('has-error');
+      sexErr && (sexErr.style.display = 'none');
+    }
+
+    const dob = getVal('dob');
+    setError('fg-dob', !dob);
+    if (!dob) ok = false;
+
+    const phone = getVal('phone');
+    setError('fg-phone', !phone);
+    if (!phone) ok = false;
+
+    const occ = getVal('occupation');
+    setError('fg-occupation', !occ);
+    if (!occ) ok = false;
+
+    const edu = getVal('education');
+    setError('fg-education', !edu);
+    if (!edu) ok = false;
+
+    const addr = getVal('address');
+    setError('fg-address', !addr);
+    if (!addr) ok = false;
+
+    return ok;
+  }
+
+  // ── CLEAR ERRORS ON INPUT ───────────────────────────────────────────────────
+  ['email','name','dob','phone','occupation','education','address'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      const fg = el.closest('.field-group');
+      if (fg && el.value.trim()) fg.classList.remove('has-error');
+    });
+    el.addEventListener('change', () => {
+      const fg = el.closest('.field-group');
+      if (fg && el.value.trim()) fg.classList.remove('has-error');
+    });
+  });
+
+  document.querySelectorAll('input[name="sex"]').forEach(r => {
+    r.addEventListener('change', () => {
+      const g = document.getElementById('fg-sex');
+      const e = document.getElementById('sex-error');
+      g && g.classList.remove('has-error');
+      e && (e.style.display = 'none');
+    });
+  });
+
+  // ── SUBMIT ──────────────────────────────────────────────────────────────────
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    if (!validate()) {
+      const firstErr = form.querySelector('.has-error');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // Build payload from form fields
+    const formData = {
+      timestamp:  new Date().toISOString(),
+      email:      getVal('email'),
+      name:       getVal('name'),
+      sex:        (document.querySelector('input[name="sex"]:checked') || {}).value || '',
+      dob:        getVal('dob'),
+      phone:      getVal('phone'),
+      occupation: getVal('occupation'),
+      education:  getVal('education'),
+      address:    getVal('address'),
+    };
+
+    // Loading state
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method:  'POST',
+        mode:    'no-cors',   // required for Apps Script Web App
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(formData),
+      });
+
+      // With no-cors we can't read the response — assume success if no throw
+      form.reset();
+      document.getElementById('successOverlay').classList.add('show');
+
+    } catch (err) {
+      console.error('Submission error:', err);
+      showToast('Submission failed. Please check your connection and try again.');
+    } finally {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+
+  // ── CLOSE SUCCESS ───────────────────────────────────────────────────────────
+  function closeSuccess() {
+    document.getElementById('successOverlay').classList.remove('show');
+  }
+</script>
+</body>
+</html>
