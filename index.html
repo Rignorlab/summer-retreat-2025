@@ -4,773 +4,830 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>དབྱར་དུས་སྒོམ་སྒྲུབ། First Summer Retreat 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-  @font-face {
-    font-family: 'Monlam';
-    src: url('./font/MonlamUniOuChan2.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Monlam';
+  src: url('./font/Monlam Uni OuChan2.ttf') format('truetype');
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --gold:         #C9A84C;
-    --gold-light:   #E8C97A;
-    --gold-dim:     #8B6E32;
-    --deep:         #0D0D0D;
-    --surface:      #111111;
-    --card:         #181818;
-    --border:       rgba(201,168,76,0.25);
-    --border-focus: rgba(201,168,76,0.8);
-    --text:         #E8E0D0;
-    --muted:        #7A7060;
-    --error:        #E07070;
-    --success:      #6DBF8A;
-  }
+:root {
+  --gold:          #C9A84C;
+  --gold-light:    #E8C97A;
+  --gold-dim:      #8B6E32;
+  --gold-pale:     rgba(201,168,76,0.08);
+  --deep:          #080808;
+  --card:          #141414;
+  --border:        rgba(201,168,76,0.2);
+  --border-focus:  rgba(201,168,76,0.7);
+  --text:          #EDE5D5;
+  --text-dim:      #A09080;
+  --muted:         #665E50;
+  --error:         #D4706A;
+  --red:           #8B1A1A;
+}
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  body {
-    background: var(--deep);
-    color: var(--text);
-    font-family: 'Cormorant Garamond', serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  /* MANDALA BACKGROUND */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(201,168,76,0.06) 0%, transparent 50%),
-      radial-gradient(ellipse 40% 30% at 10% 60%,  rgba(201,168,76,0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-  }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 50% at 50% -5%, rgba(139,26,26,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(201,168,76,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 0% 60%, rgba(139,26,26,0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-  /* GEOMETRIC PATTERN */
-  .bg-pattern {
-    position: fixed;
-    inset: 0;
-    opacity: 0.03;
-    background-image:
-      repeating-linear-gradient( 45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
-      repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-  }
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  background-image:
+    repeating-linear-gradient(45deg,  var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
 
-  /* PAGE WRAPPER */
-  .page {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 60px 24px 80px;
-  }
+.top-border {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold), var(--gold-light), var(--gold), var(--gold-dim), transparent);
+  z-index: 10;
+}
 
-  /* HEADER */
-  .header {
-    text-align: center;
-    margin-bottom: 52px;
-    animation: fadeDown 0.9s ease both;
-  }
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 28px 100px;
+}
 
-  .lotus-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .lotus-divider::before,
-  .lotus-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity: 0.6;
-  }
-  .lotus-symbol {
-    font-size: 22px;
-    color: var(--gold);
-    letter-spacing: 8px;
-  }
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  animation: fadeDown 1s ease both;
+}
 
-  .tibetan-title {
-    font-family: 'Monlam', serif;
-    font-size: clamp(18px, 4vw, 26px);
-    font-weight: 600;
-    color: var(--gold-light);
-    letter-spacing: 2px;
-    line-height: 1.8;
-    margin-bottom: 8px;
-  }
+.dharma-wheel {
+  font-size: 22px;
+  color: var(--gold);
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+  display: block;
+  opacity: 0.85;
+}
 
-  .english-title {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(22px, 5vw, 34px);
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
+.header-frame {
+  border: 1px solid var(--border);
+  padding: 36px 40px 30px;
+  position: relative;
+  background: rgba(201,168,76,0.02);
+}
 
-  .year-badge {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 6px;
-    color: var(--gold);
-    border: 1px solid var(--border);
-    padding: 5px 18px;
-    margin-top: 12px;
-  }
+.header-frame::before,
+.header-frame::after,
+.corner-br, .corner-bl {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  border-color: var(--gold-dim);
+  border-style: solid;
+  opacity: 0.7;
+}
+.header-frame::before { top: -1px;    left: -1px;  border-width: 2px 0 0 2px; }
+.header-frame::after  { top: -1px;    right: -1px; border-width: 2px 2px 0 0; }
+.corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.corner-bl { bottom: -1px; left: -1px;  border-width: 0 0 2px 2px; }
 
-  /* INFO CARDS */
-  .info-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-bottom: 48px;
-    animation: fadeUp 0.9s 0.2s ease both;
-  }
+.org-name {
+  font-family: 'Monlam', serif;
+  font-size: 13px;
+  color: var(--gold-dim);
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  display: block;
+}
 
-  .info-card {
-    background: var(--card);
-    padding: 18px 22px;
-  }
+.tibetan-title {
+  font-family: 'Monlam', serif;
+  font-size: clamp(20px, 4.5vw, 30px);
+  color: var(--gold-light);
+  line-height: 1.9;
+  margin-bottom: 6px;
+  display: block;
+}
 
-  .info-label {
-    font-family: 'Monlam', serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--gold);
-    margin-bottom: 4px;
-    display: block;
-  }
-  .info-label-en {
-    font-family: 'Cinzel', serif;
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-    display: block;
-  }
-  .info-value {
-    font-size: 13.5px;
-    color: var(--text);
-    line-height: 1.7;
-    font-weight: 300;
-  }
+.english-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
 
-  .contact-row { grid-column: 1 / -1; }
-  .contact-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-  }
-  .chip {
-    font-size: 12px;
-    padding: 4px 12px;
-    border: 1px solid var(--border);
-    color: var(--gold-light);
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0.5px;
-  }
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 14px;
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim));
+  opacity: 0.6;
+}
+.divider-ornament::after {
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
+}
+.ornament-center { color: var(--gold); font-size: 14px; letter-spacing: 6px; opacity: 0.8; }
 
-  /* FORM CARD */
-  .form-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 44px 44px 52px;
-    animation: fadeUp 0.9s 0.35s ease both;
-    position: relative;
-    overflow: hidden;
-  }
+.badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.badge {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  padding: 5px 16px;
+  text-transform: uppercase;
+}
+.badge-dot { width: 4px; height: 4px; background: var(--gold-dim); border-radius: 50%; opacity: 0.5; }
 
-  .form-card::before,
-  .form-card::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-color: var(--gold-dim);
-    border-style: solid;
-    opacity: 0.5;
-  }
-  .form-card::before { top: 12px;    left: 12px;  border-width: 1px 0 0 1px; }
-  .form-card::after  { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  animation: fadeUp 1s 0.2s ease both;
+}
 
-  .form-section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 32px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
+.info-tile {
+  background: var(--card);
+  padding: 20px 18px;
+  text-align: center;
+}
 
-  /* FORM FIELDS */
-  .field-group { margin-bottom: 28px; }
+.info-tile-icon { font-family: 'Monlam', serif; font-size: 16px; color: var(--gold); display: block; margin-bottom: 6px; }
+.info-tile-label { font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 8px; }
+.info-tile-value { font-size: 13px; color: var(--text); line-height: 1.7; font-weight: 300; }
 
-  .field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+.contact-tile {
+  grid-column: 1 / -1;
+  background: var(--card);
+  padding: 18px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contact-tile-label { font-family: 'Monlam', serif; font-size: 13px; color: var(--gold); white-space: nowrap; padding-top: 2px; }
+.contact-chips { display: flex; flex-wrap: wrap; gap: 8px; flex: 1; }
+.chip {
+  font-size: 11.5px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: 'Cormorant Garamond', serif;
+  transition: border-color 0.2s, color 0.2s;
+}
+.chip:hover { border-color: var(--gold-dim); color: var(--gold-light); }
 
-  label { display: block; margin-bottom: 8px; }
+.notice-bar {
+  background: rgba(139,26,26,0.15);
+  border: 1px solid rgba(139,26,26,0.3);
+  border-top: none;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  animation: fadeUp 1s 0.25s ease both;
+}
+.notice-gem { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+.notice-text { font-family: 'Monlam', serif; font-size: 12px; color: var(--text-dim); line-height: 1.6; }
 
-  .label-tibetan {
-    font-family: 'Monlam', serif;
-    font-size: 12px;
-    color: var(--gold-light);
-    display: block;
-    margin-bottom: 2px;
-  }
-  .label-english {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: var(--muted);
-    font-style: italic;
-  }
-  .required-star {
-    color: var(--gold);
-    margin-left: 3px;
-    font-style: normal;
-  }
+/* FORM CARD */
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 52px 52px 60px;
+  animation: fadeUp 1s 0.3s ease both;
+  position: relative;
+}
 
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="date"],
-  select,
-  textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    padding: 11px 16px;
-    outline: none;
-    transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 0;
-  }
+.form-card::before,
+.form-card::after {
+  content: '';
+  position: absolute;
+  width: 56px; height: 56px;
+  border-color: var(--gold-dim);
+  border-style: solid;
+  opacity: 0.35;
+}
+.form-card::before { top: 16px;    left: 16px;  border-width: 1px 0 0 1px; }
+.form-card::after  { bottom: 16px; right: 16px; border-width: 0 1px 1px 0; }
 
-  input[type="date"] { color-scheme: dark; }
+.form-section { margin-bottom: 44px; }
 
-  input:focus,
-  select:focus,
-  textarea:focus {
-    border-color: var(--border-focus);
-    background: rgba(201,168,76,0.04);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.06);
-  }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.section-num {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  width: 30px; height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.section-title-wrap { flex: 0 0 auto; }
+.section-title-tib { font-family: 'Monlam', serif; font-size: 13px; color: var(--gold-light); display: block; line-height: 1.4; }
+.section-title-eng { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); }
+.section-line { flex: 1; height: 1px; background: var(--border); }
 
-  input::placeholder,
-  textarea::placeholder {
-    color: rgba(122,112,96,0.6);
-    font-style: italic;
-    font-size: 14px;
-  }
+/* FIELDS */
+.field-group { margin-bottom: 26px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-    cursor: pointer;
-  }
-  select option { background: #1a1a1a; color: var(--text); }
+label { display: block; margin-bottom: 8px; }
 
-  textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+.label-tib { font-family: 'Monlam', serif; font-size: 12px; color: var(--gold-light); display: block; margin-bottom: 2px; line-height: 1.5; }
+.label-eng { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 1.5px; color: var(--muted); font-style: italic; }
+.req { color: var(--gold); margin-left: 2px; font-style: normal; }
 
-  /* RADIO GROUP */
-  .radio-group {
-    display: flex;
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .radio-option { flex: 1; }
-  .radio-option input[type="radio"] { display: none; }
-  .radio-option label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 8px;
-    cursor: pointer;
-    background: rgba(255,255,255,0.02);
-    border-right: 1px solid var(--border);
-    transition: background 0.2s;
-    margin: 0;
-  }
-  .radio-option:last-child label { border-right: none; }
-  .radio-option input[type="radio"]:checked + label {
-    background: rgba(201,168,76,0.12);
-    border-bottom: 2px solid var(--gold);
-  }
-  .radio-option label:hover { background: rgba(201,168,76,0.06); }
-  .radio-tibetan {
-    font-family: 'Monlam', serif;
-    font-size: 11px;
-    color: var(--gold-light);
-    margin-bottom: 2px;
-  }
-  .radio-english { font-size: 12px; color: var(--muted); font-style: italic; }
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-bottom: 1px solid rgba(201,168,76,0.35);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
 
-  /* DIVIDER */
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 36px 0;
-  }
-  .section-divider::before,
-  .section-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-  .divider-gem {
-    width: 6px;
-    height: 6px;
-    background: var(--gold-dim);
-    transform: rotate(45deg);
-  }
+input[type="date"] { color-scheme: dark; }
 
-  /* EMAIL NOTE */
-  .email-note {
-    font-size: 12px;
-    color: var(--muted);
-    font-style: italic;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .email-note::before { content: '✦'; color: var(--gold-dim); font-size: 9px; }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--border-focus);
+  background: rgba(201,168,76,0.04);
+  box-shadow: 0 2px 0 rgba(201,168,76,0.3), 0 0 0 3px rgba(201,168,76,0.05);
+}
 
-  /* FIELD ERROR */
-  .field-error {
-    font-size: 12px;
-    color: var(--error);
-    margin-top: 5px;
-    display: none;
-    font-style: italic;
-  }
-  .field-group.has-error input,
-  .field-group.has-error select,
-  .field-group.has-error textarea { border-color: var(--error); }
-  .field-group.has-error .field-error { display: block; }
+input::placeholder, textarea::placeholder {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0.7;
+}
 
-  /* SUBMIT BUTTON */
-  .submit-wrap { margin-top: 44px; text-align: center; }
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9A84C' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+select option { background: #1a1a1a; color: var(--text); }
+textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
 
-  .submit-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold-light);
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    padding: 16px 52px;
-    cursor: pointer;
-    transition: all 0.3s;
-    overflow: hidden;
-  }
-  .submit-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(201,168,76,0.15), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.4s;
-  }
-  .submit-btn:hover::before { transform: translateX(0); }
-  .submit-btn:hover { box-shadow: 0 0 30px rgba(201,168,76,0.15); color: #fff; }
-  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.radio-group { display: flex; border: 1px solid var(--border); }
+.radio-opt { flex: 1; }
+.radio-opt input[type="radio"] { display: none; }
+.radio-opt label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.02);
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+  margin: 0;
+  gap: 3px;
+}
+.radio-opt:last-child label { border-right: none; }
+.radio-opt input[type="radio"]:checked + label {
+  background: rgba(201,168,76,0.1);
+  box-shadow: inset 0 -2px 0 var(--gold);
+}
+.radio-opt label:hover { background: rgba(201,168,76,0.05); }
+.radio-tib { font-family: 'Monlam', serif; font-size: 13px; color: var(--gold-light); }
+.radio-eng { font-size: 11px; color: var(--muted); font-style: italic; }
 
-  .submit-tibetan {
-    font-family: 'Monlam', serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-  }
+.field-hint {
+  font-size: 11px; color: var(--muted); font-style: italic;
+  margin-top: 5px; display: flex; align-items: center; gap: 6px; line-height: 1.5;
+}
+.field-hint::before { content: '◆'; color: var(--gold-dim); font-size: 6px; }
 
-  /* SPINNER */
-  .spinner {
-    display: none;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(201,168,76,0.3);
-    border-top-color: var(--gold);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-  }
-  .submit-btn.loading .spinner { display: inline-block; }
-  .submit-btn.loading .submit-tibetan,
-  .submit-btn.loading .submit-label { opacity: 0.4; }
+.field-error {
+  font-size: 11.5px; color: var(--error);
+  margin-top: 5px; display: none; font-style: italic;
+}
+.field-group.has-error input,
+.field-group.has-error select,
+.field-group.has-error textarea { border-color: var(--error); }
+.field-group.has-error .field-error { display: block; }
 
-  @keyframes spin { to { transform: rotate(360deg); } }
+.declaration {
+  border: 1px solid var(--border);
+  padding: 20px 22px;
+  margin: 36px 0 44px;
+  background: rgba(201,168,76,0.02);
+  position: relative;
+}
+.declaration::before {
+  content: '❖';
+  position: absolute;
+  top: -9px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  padding: 0 10px;
+  color: var(--gold-dim);
+  font-size: 12px;
+}
+.declaration-text { font-family: 'Monlam', serif; font-size: 12px; color: var(--text-dim); line-height: 2; text-align: center; }
+.declaration-en { font-size: 12px; color: var(--muted); font-style: italic; text-align: center; margin-top: 6px; line-height: 1.6; }
 
-  /* SUCCESS OVERLAY */
-  .success-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.88);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 24px;
-  }
-  .success-overlay.show { display: flex; animation: fadeIn 0.4s ease; }
+.submit-wrap { text-align: center; }
 
-  .success-icon {
-    width: 72px;
-    height: 72px;
-    border: 1px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    margin: 0 auto;
-    animation: scaleIn 0.5s 0.2s ease both;
-  }
-  .success-tibetan {
-    font-family: 'Monlam', serif;
-    font-size: 18px;
-    color: var(--gold-light);
-    animation: fadeUp 0.5s 0.3s ease both;
-  }
-  .success-english {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: var(--text);
-    animation: fadeUp 0.5s 0.4s ease both;
-  }
-  .success-msg {
-    font-size: 15px;
-    color: var(--muted);
-    max-width: 380px;
-    line-height: 1.7;
-    animation: fadeUp 0.5s 0.5s ease both;
-  }
-  .success-close {
-    margin-top: 10px;
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    padding: 10px 28px;
-    cursor: pointer;
-    transition: all 0.2s;
-    animation: fadeUp 0.5s 0.6s ease both;
-  }
-  .success-close:hover { border-color: var(--gold); color: var(--gold-light); }
+.submit-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  padding: 18px 60px;
+  cursor: pointer;
+  transition: all 0.35s;
+  overflow: hidden;
+}
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.14), transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+.submit-btn:hover::before { transform: translateX(0); }
+.submit-btn:hover { box-shadow: 0 0 40px rgba(201,168,76,0.12), inset 0 0 40px rgba(201,168,76,0.04); color: #fff; }
+.submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-  /* ERROR TOAST */
-  .toast {
-    display: none;
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2a1010;
-    border: 1px solid var(--error);
-    color: var(--error);
-    font-size: 13px;
-    padding: 12px 24px;
-    z-index: 200;
-    animation: fadeUp 0.3s ease;
-    white-space: nowrap;
-  }
-  .toast.show { display: block; }
+.submit-tib { font-family: 'Monlam', serif; font-size: 15px; letter-spacing: 2px; }
 
-  /* FOOTER */
-  .footer {
-    text-align: center;
-    margin-top: 48px;
-    animation: fadeUp 0.9s 0.5s ease both;
-  }
-  .footer-text {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    line-height: 2;
-  }
-  .footer-text a { color: var(--gold-dim); text-decoration: none; transition: color 0.2s; }
-  .footer-text a:hover { color: var(--gold-light); }
+.spinner {
+  display: none;
+  width: 14px; height: 14px;
+  border: 1.5px solid rgba(201,168,76,0.3);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.submit-btn.loading .spinner { display: inline-block; }
+.submit-btn.loading .submit-tib,
+.submit-btn.loading .submit-label { opacity: 0.3; }
 
-  /* ANIMATIONS */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.7); }
-    to   { opacity: 1; transform: scale(1); }
-  }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-  /* RESPONSIVE */
-  @media (max-width: 580px) {
-    .form-card  { padding: 28px 20px 36px; }
-    .field-row  { grid-template-columns: 1fr; }
-    .info-strip { grid-template-columns: 1fr; }
-    .contact-row { grid-column: 1; }
-    .radio-tibetan { font-size: 9px; }
-  }
+.submit-note { font-size: 11px; color: var(--muted); font-style: italic; margin-top: 14px; }
+
+/* SUCCESS */
+.success-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+  padding: 24px;
+}
+.success-overlay.show { display: flex; animation: fadeIn 0.4s ease; }
+
+.success-emblem {
+  width: 80px; height: 80px;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: scaleIn 0.5s 0.2s ease both;
+}
+.success-emblem::before, .success-emblem::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: rgba(201,168,76,0.2);
+}
+.success-emblem::before { width: 90px; height: 90px; border-width: 1px; }
+.success-emblem::after  { width: 100px; height: 100px; border-width: 1px; border-color: rgba(201,168,76,0.1); }
+.success-emblem-inner { font-family: 'Monlam', serif; font-size: 28px; color: var(--gold); }
+
+.success-tib { font-family: 'Monlam', serif; font-size: 20px; color: var(--gold-light); animation: fadeUp 0.5s 0.3s ease both; }
+.success-eng { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--text); animation: fadeUp 0.5s 0.4s ease both; }
+.success-msg { font-size: 14px; color: var(--muted); max-width: 400px; line-height: 1.8; animation: fadeUp 0.5s 0.5s ease both; }
+.success-ref { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; color: var(--gold-dim); animation: fadeUp 0.5s 0.55s ease both; }
+.success-close {
+  margin-top: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  padding: 10px 32px;
+  cursor: pointer;
+  transition: all 0.2s;
+  animation: fadeUp 0.5s 0.6s ease both;
+}
+.success-close:hover { border-color: var(--gold); color: var(--gold-light); }
+
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 32px; left: 50%;
+  transform: translateX(-50%);
+  background: #1a0a0a;
+  border: 1px solid var(--error);
+  color: var(--error);
+  font-size: 12px;
+  padding: 12px 24px;
+  z-index: 200;
+  white-space: nowrap;
+}
+.toast.show { display: block; animation: fadeUp 0.3s ease; }
+
+.footer {
+  text-align: center;
+  margin-top: 52px;
+  animation: fadeUp 1s 0.5s ease both;
+}
+.footer-ornament {
+  font-family: 'Monlam', serif;
+  font-size: 18px;
+  color: var(--gold-dim);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 14px;
+  letter-spacing: 8px;
+}
+.footer-text { font-size: 11.5px; color: var(--muted); letter-spacing: 0.5px; line-height: 2.2; }
+.footer-text a { color: var(--gold-dim); text-decoration: none; transition: color 0.2s; }
+.footer-text a:hover { color: var(--gold-light); }
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 640px) {
+  .form-card    { padding: 32px 22px 40px; }
+  .field-row    { grid-template-columns: 1fr; }
+  .info-grid    { grid-template-columns: 1fr; }
+  .header-frame { padding: 24px 20px 20px; }
+  .contact-tile { flex-direction: column; gap: 10px; }
+}
 </style>
 </head>
 <body>
 
 <div class="bg-pattern"></div>
+<div class="top-border"></div>
 
-<!-- SUCCESS OVERLAY -->
 <div class="success-overlay" id="successOverlay">
-  <div class="success-icon">✦</div>
-  <p class="success-tibetan">སྒོ་བཀར་གྲུབ་སོང་།</p>
-  <p class="success-english">Registration Complete</p>
-  <p class="success-msg">Your registration has been submitted successfully. We look forward to welcoming you to the First Summer Retreat 2025.</p>
-  <button class="success-close" onclick="closeSuccess()">CLOSE</button>
+  <div class="success-emblem">
+    <span class="success-emblem-inner">༄</span>
+  </div>
+  <p class="success-tib">སྒོ་བཀར་གྲུབ་སོང་།</p>
+  <p class="success-eng">Registration Complete</p>
+  <p class="success-msg">Your registration has been received. We look forward to welcoming you to the First Summer Retreat 2025 at Gaden Shartse Guest House.</p>
+  <p class="success-ref">Please keep this confirmation for your records</p>
+  <button class="success-close" onclick="closeSuccess()">CLOSE &nbsp;✕</button>
 </div>
 
-<!-- ERROR TOAST -->
 <div class="toast" id="errorToast">Submission failed. Please try again.</div>
 
 <div class="page">
 
-  <!-- HEADER -->
   <header class="header">
-    <div class="lotus-divider">
-      <span class="lotus-symbol">❋ ༄ ❋</span>
+    <span class="dharma-wheel">❋ ༄ ཆོས་ཀྱི་འཁོར་ལོ། ༄ ❋</span>
+    <div class="header-frame">
+      <div class="corner-br"></div>
+      <div class="corner-bl"></div>
+      <span class="org-name">རིག་གནས་དང་ཚན་རིག་སློབ་གསོ།</span>
+      <span class="tibetan-title">དབྱར་དུས་སྒོམ་སྒྲུབ་ཐེངས་དང་པོ།</span>
+      <div class="divider-ornament">
+        <span class="ornament-center">❖ ✦ ❖</span>
+      </div>
+      <h1 class="english-title">First Summer Retreat</h1>
+      <div class="badges">
+        <span class="badge">2025</span>
+        <span class="badge-dot"></span>
+        <span class="badge">Mundgod</span>
+        <span class="badge-dot"></span>
+        <span class="badge">Registration Open</span>
+      </div>
     </div>
-    <p class="tibetan-title">དབྱར་དུས་སྒོམ་སྒྲུབ་ཐེངས་དང་པོ།</p>
-    <h1 class="english-title">First Summer Retreat</h1>
-    <div class="year-badge">2025</div>
   </header>
 
-  <!-- INFO STRIP -->
-  <div class="info-strip">
-    <div class="info-card">
-      <span class="info-label">ཚོགས་དུས།</span>
-      <span class="info-label-en">Schedule</span>
-      <p class="info-value">31st July – 6th August<br>2025</p>
+  <div class="info-grid">
+    <div class="info-tile">
+      <span class="info-tile-icon">ཚོགས་དུས།</span>
+      <span class="info-tile-label">Schedule</span>
+      <p class="info-tile-value">31 July – 6 August<br><em style="color:var(--muted);font-size:12px;">7 Days · 2025</em></p>
     </div>
-    <div class="info-card">
-      <span class="info-label">ཚོགས་ཡུལ།</span>
-      <span class="info-label-en">Venue</span>
-      <p class="info-value">Gaden Shartse Guest House<br>Lama Camp - 1, Mundgod — 581411</p>
+    <div class="info-tile">
+      <span class="info-tile-icon">ཚོགས་ཡུལ།</span>
+      <span class="info-tile-label">Venue</span>
+      <p class="info-tile-value">Gaden Shartse<br>Guest House<br><em style="color:var(--muted);font-size:12px;">Lama Camp-1, Mundgod 581411</em></p>
     </div>
-    <div class="info-card contact-row">
-      <span class="info-label">ང་ཚོར་འབྲེལ་གཏུག་བྱེད་ས།</span>
-      <span class="info-label-en">Contact Us</span>
+    <div class="info-tile">
+      <span class="info-tile-icon">གནས་ཡུལ།</span>
+      <span class="info-tile-label">Location</span>
+      <p class="info-tile-value">Karnataka, India<br><em style="color:var(--muted);font-size:12px;">Tibetan Settlement</em></p>
+    </div>
+    <div class="contact-tile">
+      <span class="contact-tile-label">འབྲེལ་གཏུག</span>
       <div class="contact-chips">
-        <span class="chip">+91 9591347216</span>
-        <span class="chip">+91 7019642705</span>
-        <span class="chip">+91 8217428290</span>
+        <span class="chip">+91 95913 47216</span>
+        <span class="chip">+91 70196 42705</span>
+        <span class="chip">+91 82174 28290</span>
         <span class="chip">tenzingyatsoscienceleadershipa@gmail.com</span>
         <span class="chip">wegame2019@gmail.com</span>
       </div>
     </div>
   </div>
 
-  <!-- FORM -->
-  <div class="form-card">
-    <p class="form-section-title">Registration Form &nbsp;·&nbsp; སྒོ་བཀར་ཤོག་ངོས།</p>
+  <div class="notice-bar">
+    <div class="notice-gem"></div>
+    <p class="notice-text">སྒོ་བཀར་བྱེད་སྔོན། གནས་ཚུལ་ཚང་མ་ངེས་གཏན་ཅན་བྱས་རོགས། &nbsp;·&nbsp; Please ensure all information is accurate before submitting.</p>
+  </div>
 
+  <div class="form-card">
     <form id="retreatForm" novalidate>
 
-      <!-- Email -->
-      <div class="field-group" id="fg-email">
-        <label>
-          <span class="label-tibetan">ཡིག་འཕྲིན།</span>
-          <span class="label-english">Email Address <em class="required-star">*</em></span>
-        </label>
-        <input type="email" id="email" name="email"
-               placeholder="your@email.com" autocomplete="email">
-        <p class="email-note">Your email will be recorded with your response</p>
-        <p class="field-error">Please enter a valid email address.</p>
-      </div>
-
-      <div class="section-divider"><div class="divider-gem"></div></div>
-
-      <!-- Name + Sex -->
-      <div class="field-row">
-        <div class="field-group" id="fg-name">
-          <label>
-            <span class="label-tibetan">མིང་།</span>
-            <span class="label-english">Full Name <em class="required-star">*</em></span>
-          </label>
-          <input type="text" id="name" name="name"
-                 placeholder="Your full name" autocomplete="name">
-          <p class="field-error">Name is required.</p>
-        </div>
-
-        <div class="field-group" id="fg-sex">
-          <label>
-            <span class="label-tibetan">ཕོ་མོ།</span>
-            <span class="label-english">Sex <em class="required-star">*</em></span>
-          </label>
-          <div class="radio-group">
-            <div class="radio-option">
-              <input type="radio" name="sex" id="sex-male" value="Male">
-              <label for="sex-male">
-                <span class="radio-tibetan">ཕོ།</span>
-                <span class="radio-english">Male</span>
-              </label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" name="sex" id="sex-female" value="Female">
-              <label for="sex-female">
-                <span class="radio-tibetan">མོ།</span>
-                <span class="radio-english">Female</span>
-              </label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" name="sex" id="sex-other" value="Other">
-              <label for="sex-other">
-                <span class="radio-tibetan">གཞན།</span>
-                <span class="radio-english">Other</span>
-              </label>
-            </div>
+      <!-- SECTION 1 -->
+      <div class="form-section">
+        <div class="section-header">
+          <div class="section-num">①</div>
+          <div class="section-title-wrap">
+            <span class="section-title-tib">གཞི་རྩའི་གནས་ཚུལ།</span>
+            <span class="section-title-eng">Personal Information</span>
           </div>
-          <p class="field-error" id="sex-error">Please select an option.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="field-group" id="fg-email">
+          <label>
+            <span class="label-tib">ཡིག་འཕྲིན་ཁ་བྱང་།</span>
+            <span class="label-eng">Email Address <em class="req">*</em></span>
+          </label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+          <p class="field-hint">Used for confirmation and retreat communications</p>
+          <p class="field-error">Please enter a valid email address.</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group" id="fg-name">
+            <label>
+              <span class="label-tib">མིང་དང་རྒྱུ་མིང་།</span>
+              <span class="label-eng">Full Name <em class="req">*</em></span>
+            </label>
+            <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name">
+            <p class="field-error">Full name is required.</p>
+          </div>
+
+          <div class="field-group" id="fg-sex">
+            <label>
+              <span class="label-tib">ཕོ་མོའི་དབྱེ་བ།</span>
+              <span class="label-eng">Sex <em class="req">*</em></span>
+            </label>
+            <div class="radio-group">
+              <div class="radio-opt">
+                <input type="radio" name="sex" id="sex-male" value="Male">
+                <label for="sex-male">
+                  <span class="radio-tib">ཕོ།</span>
+                  <span class="radio-eng">Male</span>
+                </label>
+              </div>
+              <div class="radio-opt">
+                <input type="radio" name="sex" id="sex-female" value="Female">
+                <label for="sex-female">
+                  <span class="radio-tib">མོ།</span>
+                  <span class="radio-eng">Female</span>
+                </label>
+              </div>
+              <div class="radio-opt">
+                <input type="radio" name="sex" id="sex-other" value="Other">
+                <label for="sex-other">
+                  <span class="radio-tib">གཞན།</span>
+                  <span class="radio-eng">Other</span>
+                </label>
+              </div>
+            </div>
+            <p class="field-error" id="sex-error">Please select an option.</p>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group" id="fg-dob">
+            <label>
+              <span class="label-tib">སྐྱེས་ཚེས།</span>
+              <span class="label-eng">Date of Birth <em class="req">*</em></span>
+            </label>
+            <input type="date" id="dob" name="dob">
+            <p class="field-error">Date of birth is required.</p>
+          </div>
+
+          <div class="field-group" id="fg-phone">
+            <label>
+              <span class="label-tib">ཁ་པར་ཨང་གྲངས།</span>
+              <span class="label-eng">Mobile Number <em class="req">*</em></span>
+            </label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" autocomplete="tel">
+            <p class="field-error">Contact number is required.</p>
+          </div>
         </div>
       </div>
 
-      <!-- DOB + Phone -->
-      <div class="field-row">
-        <div class="field-group" id="fg-dob">
-          <label>
-            <span class="label-tibetan">སྐྱེས་ཚེས།</span>
-            <span class="label-english">Date of Birth <em class="required-star">*</em></span>
-          </label>
-          <input type="date" id="dob" name="dob">
-          <p class="field-error">Date of birth is required.</p>
+      <!-- SECTION 2 -->
+      <div class="form-section">
+        <div class="section-header">
+          <div class="section-num">②</div>
+          <div class="section-title-wrap">
+            <span class="section-title-tib">སློབ་གསོ་དང་འཚོ་ཐབས།</span>
+            <span class="section-title-eng">Education & Occupation</span>
+          </div>
+          <div class="section-line"></div>
         </div>
 
-        <div class="field-group" id="fg-phone">
-          <label>
-            <span class="label-tibetan">འབྲེལ་གཏུག་ཁ་པར་ཨང་།</span>
-            <span class="label-english">Contact Number <em class="required-star">*</em></span>
-          </label>
-          <input type="tel" id="phone" name="phone"
-                 placeholder="+91 00000 00000" autocomplete="tel">
-          <p class="field-error">Contact number is required.</p>
-        </div>
-      </div>
+        <div class="field-row">
+          <div class="field-group" id="fg-occupation">
+            <label>
+              <span class="label-tib">འཚོ་ཐབས་ལས་རིགས།</span>
+              <span class="label-eng">Occupation <em class="req">*</em></span>
+            </label>
+            <select id="occupation" name="occupation">
+              <option value="" disabled selected>— Select —</option>
+              <option>Student / སློབ་མ།</option>
+              <option>Monk / དགེ་འདུན་པ།</option>
+              <option>Nun / དགེ་འདུན་མ།</option>
+              <option>Teacher / དགེ་རྒན།</option>
+              <option>Researcher / ཞིབ་འཇུག་པ།</option>
+              <option>Business / ཚོང་ལས།</option>
+              <option>Government / གཞུང་ལས།</option>
+              <option>NGO / ཁེ་མེད་ཚོགས་པ།</option>
+              <option>Healthcare / གསོ་རིག</option>
+              <option>Arts & Culture / རིག་གནས།</option>
+              <option>Other / གཞན།</option>
+            </select>
+            <p class="field-error">Please select your occupation.</p>
+          </div>
 
-      <!-- Occupation + Education -->
-      <div class="field-row">
-        <div class="field-group" id="fg-occupation">
-          <label>
-            <span class="label-tibetan">འཚོ་ཐབས།</span>
-            <span class="label-english">Occupation <em class="required-star">*</em></span>
-          </label>
-          <select id="occupation" name="occupation">
-            <option value="" disabled selected>— Select —</option>
-            <option>Student / སློབ་མ།</option>
-            <option>Monk / དགེ་འདུན་པ།</option>
-            <option>Nun / དགེ་འདུན་མ།</option>
-            <option>Teacher / དགེ་རྒན།</option>
-            <option>Researcher / ཞིབ་འཇུག་པ།</option>
-            <option>Business / ཚོང་ལས།</option>
-            <option>Government / གཞུང་ལས།</option>
-            <option>NGO / ཁེ་མེད་ཚོགས་པ།</option>
-            <option>Healthcare / གསོ་རིག</option>
-            <option>Other / གཞན།</option>
-          </select>
-          <p class="field-error">Please select your occupation.</p>
-        </div>
-
-        <div class="field-group" id="fg-education">
-          <label>
-            <span class="label-tibetan">ཤེས་ཡོན།</span>
-            <span class="label-english">Education <em class="required-star">*</em></span>
-          </label>
-          <select id="education" name="education">
-            <option value="" disabled selected>— Select —</option>
-            <option>Primary / གཞི་རིམ།</option>
-            <option>Secondary / བར་རིམ།</option>
-            <option>Higher Secondary / སྟོད་རིམ།</option>
-            <option>Bachelor's / སྐྱར་ཤེས།</option>
-            <option>Master's / ཀ་ཆེ་རིམ།</option>
-            <option>Doctorate / དོག་རེཊ།</option>
-            <option>Monastic Education / དགོན་ཤེས།</option>
-            <option>Other / གཞན།</option>
-          </select>
-          <p class="field-error">Please select your education level.</p>
+          <div class="field-group" id="fg-education">
+            <label>
+              <span class="label-tib">ཤེས་ཡོན་རིམ་པ།</span>
+              <span class="label-eng">Education Level <em class="req">*</em></span>
+            </label>
+            <select id="education" name="education">
+              <option value="" disabled selected>— Select —</option>
+              <option>Primary / གཞི་རིམ།</option>
+              <option>Secondary / བར་རིམ།</option>
+              <option>Higher Secondary / སྟོད་རིམ།</option>
+              <option>Bachelor's / གཞུང་རིམ།</option>
+              <option>Master's / མཐོ་རིམ།</option>
+              <option>Doctorate / དོག་ཊར།</option>
+              <option>Monastic / དགོན་ཤེས།</option>
+              <option>Other / གཞན།</option>
+            </select>
+            <p class="field-error">Please select your education level.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Address -->
-      <div class="field-group" id="fg-address">
-        <label>
-          <span class="label-tibetan">སྡོད་གནས་དང་ཁ་བྱང་།</span>
-          <span class="label-english">Resident and Address <em class="required-star">*</em></span>
-        </label>
-        <textarea id="address" name="address"
-                  placeholder="Your current residence and full postal address…"></textarea>
-        <p class="field-error">Address is required.</p>
+      <!-- SECTION 3 -->
+      <div class="form-section">
+        <div class="section-header">
+          <div class="section-num">③</div>
+          <div class="section-title-wrap">
+            <span class="section-title-tib">སྡོད་གནས་ཁ་བྱང་།</span>
+            <span class="section-title-eng">Residence & Address</span>
+          </div>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="field-group" id="fg-address">
+          <label>
+            <span class="label-tib">གནས་ཡུལ་དང་ཁ་བྱང་གཏན་འཁེལ།</span>
+            <span class="label-eng">Current Residence & Postal Address <em class="req">*</em></span>
+          </label>
+          <textarea id="address" name="address" placeholder="Settlement / Town, District, State, PIN Code…" rows="4"></textarea>
+          <p class="field-hint">Include settlement name, district, state and postal code</p>
+          <p class="field-error">Address is required.</p>
+        </div>
       </div>
 
-      <!-- Submit -->
+      <!-- DECLARATION -->
+      <div class="declaration">
+        <p class="declaration-text">བདག་གིས་འདིར་བཀོད་པའི་གནས་ཚུལ་ཚང་མ་བདེན་པ་ཡིན་པར་ངེས་བཞིན་ཡིན།</p>
+        <p class="declaration-en">I hereby declare that all information provided is true and accurate to the best of my knowledge.</p>
+      </div>
+
+      <!-- SUBMIT -->
       <div class="submit-wrap">
         <button type="submit" class="submit-btn" id="submitBtn">
           <span class="spinner"></span>
-          <span class="submit-tibetan">སྒོ་བཀར་བྱེད།</span>
+          <span class="submit-tib">སྒོ་བཀར་བྱེད།</span>
           <span class="submit-label">Register</span>
         </button>
+        <p class="submit-note">Fields marked <span style="color:var(--gold)">*</span> are required &nbsp;·&nbsp; གལ་ཆེའི་གནས་ཚུལ་ * ཡིས་མཚན་འཇོག</p>
       </div>
 
     </form>
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
+    <span class="footer-ornament">❋ ༄ ❋</span>
     <p class="footer-text">
-      ✦ &nbsp; གལ་ཆེའི་གནས་ཚུལ་ * ཡིས་མཚན་འཇོག་བྱས་པ་ཡིན། &nbsp; ✦<br>
-      <em>Fields marked * are required</em><br><br>
-      <a href="mailto:tenzingyatsoscienceleadershipa@gmail.com">
-        tenzingyatsoscienceleadershipa@gmail.com
-      </a>
+      For enquiries: &nbsp;
+      <a href="mailto:tenzingyatsoscienceleadershipa@gmail.com">tenzingyatsoscienceleadershipa@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:wegame2019@gmail.com">wegame2019@gmail.com</a><br>
+      <span style="font-family:'Monlam',serif;font-size:12px;letter-spacing:1px;">
+        རིག་གནས་དང་ཚན་རིག་སློབ་གསོ། &nbsp;·&nbsp; དབྱར་དུས་སྒོམ་སྒྲུབ། ༢༠༢༥
+      </span>
     </p>
   </footer>
 
@@ -806,14 +863,13 @@
   function validate() {
     let ok = true;
 
-    const email = getVal('email');
-    const emailOk = validateEmail(email);
+    const emailOk = validateEmail(getVal('email'));
     setError('fg-email', !emailOk);
     if (!emailOk) ok = false;
 
-    const name = getVal('name');
-    setError('fg-name', !name);
-    if (!name) ok = false;
+    const nameOk = !!getVal('name');
+    setError('fg-name', !nameOk);
+    if (!nameOk) ok = false;
 
     const sex    = document.querySelector('input[name="sex"]:checked');
     const sexErr = document.getElementById('sex-error');
@@ -827,25 +883,11 @@
       sexErr && (sexErr.style.display = 'none');
     }
 
-    const dob = getVal('dob');
-    setError('fg-dob', !dob);
-    if (!dob) ok = false;
-
-    const phone = getVal('phone');
-    setError('fg-phone', !phone);
-    if (!phone) ok = false;
-
-    const occ = getVal('occupation');
-    setError('fg-occupation', !occ);
-    if (!occ) ok = false;
-
-    const edu = getVal('education');
-    setError('fg-education', !edu);
-    if (!edu) ok = false;
-
-    const addr = getVal('address');
-    setError('fg-address', !addr);
-    if (!addr) ok = false;
+    ['dob','phone','occupation','education','address'].forEach(id => {
+      const v = getVal(id);
+      setError('fg-' + id, !v);
+      if (!v) ok = false;
+    });
 
     return ok;
   }
@@ -853,22 +895,19 @@
   ['email','name','dob','phone','occupation','education','address'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
-    el.addEventListener('input', () => {
-      const fg = el.closest('.field-group');
-      if (fg && el.value.trim()) fg.classList.remove('has-error');
-    });
-    el.addEventListener('change', () => {
-      const fg = el.closest('.field-group');
-      if (fg && el.value.trim()) fg.classList.remove('has-error');
+    ['input','change'].forEach(ev => {
+      el.addEventListener(ev, () => {
+        const fg = el.closest('.field-group');
+        if (fg && el.value.trim()) fg.classList.remove('has-error');
+      });
     });
   });
 
   document.querySelectorAll('input[name="sex"]').forEach(r => {
     r.addEventListener('change', () => {
-      const g = document.getElementById('fg-sex');
+      document.getElementById('fg-sex').classList.remove('has-error');
       const e = document.getElementById('sex-error');
-      g && g.classList.remove('has-error');
-      e && (e.style.display = 'none');
+      if (e) e.style.display = 'none';
     });
   });
 
@@ -881,7 +920,7 @@
       return;
     }
 
-    const formData = {
+    const payload = {
       timestamp:  new Date().toISOString(),
       email:      getVal('email'),
       name:       getVal('name'),
@@ -901,14 +940,14 @@
         method:  'POST',
         mode:    'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(formData),
+        body:    JSON.stringify(payload),
       });
 
       form.reset();
       document.getElementById('successOverlay').classList.add('show');
 
     } catch (err) {
-      console.error('Submission error:', err);
+      console.error(err);
       showToast('Submission failed. Please check your connection and try again.');
     } finally {
       submitBtn.classList.remove('loading');
